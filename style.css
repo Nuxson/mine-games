@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;800;900&display=swap');
+@import url('fonts/icon-font/style.css');
+
+:root{
+    --margin: 16px;
+    --accent: rgb(226, 239, 255);
+    --accent2: rgb(255, 222, 222);
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+}
+h1{
+    font-weight: 600;
+    text-align: center;
+}
+.game {
+    background-color: rgb(244, 251, 255);
+    padding: var(--margin);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 0 1fr 0;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+}
+.game__reload{
+
+    background-color:var(--accent);
+    margin-top: 24px;
+    border-radius: 8px;
+    height: 65px;
+    font-size: 28px;
+    font-weight: 600;
+    align-items:center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+.game__reload:hover{
+    background-color:var(--accent2);
+}
+/*Game*/
+.mines{
+    --cell: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, var(--cell));
+    grid-auto-rows:var(--cell);
+    grid-gap: 7px;
+    
+}
+.mines__item {
+    border: 1px solid #cfd9e4;
+    border-radius: 8px;
+    display: grid;
+    align-items:center;
+    justify-items: center;
+    font-size: 32px;
+
+}
+.mines__item:hover {
+    background-color: var(--accent);
+    cursor: pointer;
+}
+.mines__item.success{
+    background: rgb(77, 236, 25);
+    color: rgb(46, 185, 0);
+}
+.mines__item.fail{
+    background: rgb(255, 59, 59);
+    color:rgb(185, 0, 0);
+}
+.mines__item.info{
+    opacity: 0.4;
+}
